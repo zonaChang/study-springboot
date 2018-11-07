@@ -1,0 +1,18 @@
+useGeneratedKeys, keyProperty, keyColumn
+
+1. 
+数据库支持自增的：
+    自动生成表中的id属性值（首先数据库支持自增， 然后id属性为数据库中的自增列，）
+<insert id="insertAuthor" useGeneratedKeys="true"keyProperty="id"></insert>
+
+2. 
+数据库不支持自增的
+    需要先计算key，然后再插入
+<insert id="insertAuthor">
+    keyProperty：计算的值要赋值给传入对象的属性名称
+    order： 在insert的逻辑之前， 还是之后
+    <selectKey keyProperty="id" resultType="int" order="BEFORE">
+        这里获取id值得语句
+    </selectKey>
+    这里接着写正常的插入逻辑
+</insert>
