@@ -132,6 +132,8 @@
   <build>
     <finalName>study-springboot</finalName>
     <resources>
+
+      <!-- idea编译阶段不会将mybatis的xml文件编译到classes目录下， 需要添加该配置显式指定 -->
       <resource>
         <directory>src/main/java</directory>
         <excludes>
@@ -145,6 +147,11 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <!--fork :  如果没有该项配置，devtools不会起作用，即应用不会restart加载器 -->
+          <!--需要设置ide自动编译， 且idea需要在设置一个运行项目运行中自动编译（shift+ctrl+alt+/）-->
+          <fork>true</fork>
+        </configuration>
       </plugin>
       <!-- mybatis generator 自动生成代码插件 -->
       <plugin>

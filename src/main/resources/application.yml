@@ -1,5 +1,7 @@
 server:
   port: 1234
+  #上下文路径
+  contextPath: /
 
 spring:
     datasource:

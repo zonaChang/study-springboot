@@ -10,7 +10,7 @@
 /**/.settings/
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
+/log/
 # Package Files #
 *.jar
 *.war
