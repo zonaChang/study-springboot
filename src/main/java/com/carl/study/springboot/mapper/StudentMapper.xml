@@ -10,5 +10,20 @@
   <update id="updateStudentById">
    UPDATE t_student t SET t.name=#{name} WHERE t.id=#{id}
   </update>
+  
+  <insert id="insertStudent" parameterType="student">
+    <selectKey keyProperty="id" order="BEFORE" resultType="long">
+      SELECT seq_student.nextval FROM dual
+    </selectKey>
+    INSERT  INTO t_student (id, name) VALUES(#{id}, #{name})
+  </insert>
+<!--selectKey keyColumn用于自增主键值映射到javabean字段， 如果自增主键不是第一列， 需要明确支持该值，值为数据库字段名-->
+  <insert id="insertStudent2" parameterType="student">
+
+    <selectKey keyProperty="id" order="BEFORE"  resultType="long">
+      SELECT seq_student.nextval FROM dual
+    </selectKey>
+    INSERT  INTO t_student (id, name) VALUES(#{id}, #{name})
+  </insert>
 
 </mapper>

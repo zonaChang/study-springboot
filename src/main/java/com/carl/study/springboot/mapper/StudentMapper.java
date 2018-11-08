@@ -50,4 +50,6 @@ public interface StudentMapper {
 
 
   int updateStudentById(@Param("name") String name, @Param("id") int id);
+
+  int insertStudent(Student student);
 }

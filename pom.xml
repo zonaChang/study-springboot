@@ -58,24 +58,19 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot</artifactId>
-      <version>2.1.0.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
-      <version>2.1.0.RELEASE</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <version>2.1.0.RELEASE</version>
-
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
-      <version>2.1.0.RELEASE</version>
       <exclusions>
         <exclusion>
           <groupId>ch.qos.logback</groupId>
@@ -86,12 +81,11 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
-      <version>2.1.0.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
-      <version>2.1.0.RELEASE</version>
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.jayway.jsonpath</groupId>
@@ -100,14 +94,15 @@
     </dependency>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-maven-plugin</artifactId>
-      <version>2.1.0.RELEASE</version>
-    </dependency>
-    <dependency>
       <groupId>org.mybatis.spring.boot</groupId>
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <version>1.3.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+      <version>2.1.0.RELEASE</version>
     </dependency>
     <!-- 分页插件 -->
     <dependency>
@@ -147,6 +142,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+
         <configuration>
           <!--fork :  如果没有该项配置，devtools不会起作用，即应用不会restart加载器 -->
           <!--需要设置ide自动编译， 且idea需要在设置一个运行项目运行中自动编译（shift+ctrl+alt+/）-->

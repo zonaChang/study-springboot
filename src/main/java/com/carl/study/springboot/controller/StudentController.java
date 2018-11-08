@@ -27,7 +27,7 @@ public class StudentController {
   @RequestMapping("getStuByName")
   public Student getStuByName(String name){
 
-    Student student = new Student(34, "name-" + name);
+    Student student = new Student(34, "name-xxxuuyyyy" + name);
     studentService.changeAge(student);
     return student;
   }
@@ -48,5 +48,15 @@ public class StudentController {
       int x = 2/0;
     }
     return result;
+  }
+
+  @RequestMapping("insert")
+  public Student insertStu(String name){
+
+    Student student = new Student();
+    student.setName(name);
+    int count = studentMapper.insertStudent(student);
+    System.out.println("count="+count);
+    return  student;
   }
 }
